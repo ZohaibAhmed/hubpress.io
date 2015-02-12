@@ -1,6 +1,6 @@
 = Creating Dynamic Lines with ThreeJS
 
-'var geometry, line, lineMaterial,
+`var geometry, line, lineMaterial,
      MAX_LINE_POINTS = 100000;
 
 lineMaterial = new THREE.MeshBasicMaterial({
@@ -22,4 +22,4 @@ Now, when you want to add more vertices to the line, it's as simple as three ste
 
 'line.geometry.vertices.push(myo_manager.myoId.currentLine.geometry.vertices.shift()); // shift the array
 line.geometry.vertices[100000-1] = new THREE.Vector3(myo_manager.cube.position.x, myo_manager.cube.position.y, 0); //add the point to the end of the array
-line.geometry.verticesNeedUpdate = true;'
+line.geometry.verticesNeedUpdate = true;`

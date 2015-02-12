@@ -115,7 +115,7 @@
     <ol class="post-list">
       <li>
         <h2 class="post-list__post-title post-title"><a href="http://zohaibahmed.github.io/2015/02/12/Creating-Dynamic-Lines-with-ThreeJS.html" title="link to Creating Dynamic Lines with ThreeJS">Creating Dynamic Lines with ThreeJS</a></h2>
-        <p class="excerpt">var geometry, line, lineMaterial,      MAX_LINE_POINTS = 100000; lineMaterial = new THREE.MeshBasicMaterial({ 	color: window.myoManager.hands[myoId].myoId.colour }); geometry = new THREE.Geometry(); for (i=0; i &lt; MAX_LINE_POINTS; i++){ 	geometry.vertices.push(new THREE.Vector3(0, 0, 0)); } line = new THREE.Line(geometry, lineMaterial); line.geometry.dynamic&hellip;</p>
+        <p class="excerpt">I came across a needed the ability to draw in Three.js. A small hack is to create a line and fill the vertices with the starting point. Note the line.geometry.dynamic flag which is set to true. var geometry, line, lineMaterial,      MAX_LINE_POINTS = 100000; lineMaterial = new THREE.&hellip;</p>
         <div class="post-list__meta"><time datetime="12 Feb 2015" class="post-list__meta--date date">12 Feb 2015</time> &#8226; <span class="post-list__meta--tags tags"></span></div>
         <hr class="post-list__divider" />
       </li>

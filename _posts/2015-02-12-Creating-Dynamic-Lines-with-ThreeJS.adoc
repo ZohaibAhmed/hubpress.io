@@ -1,12 +1,25 @@
 = Creating Dynamic Lines with ThreeJS
 
-`if (myo_manager.myoId.current_status 
-                && (Math.abs(myo_manager.old_cube_x - myo_manager.cube.position.x) > 0.02)
-                && (Math.abs(myo_manager.old_cube_y - myo_manager.cube.position.y) > 0.02)
-                ) {
+'var geometry, line, lineMaterial,
+     MAX_LINE_POINTS = 100000;
 
-            // we're just going to add on to the current line
-            myo_manager.myoId.currentLine.geometry.vertices.push(myo_manager.myoId.currentLine.geometry.vertices.shift()); //shift the array
-            myo_manager.myoId.currentLine.geometry.vertices[100000-1] = new THREE.Vector3(myo_manager.cube.position.x, myo_manager.cube.position.y, 0); //add the point to the end of the array
-            myo_manager.myoId.currentLine.geometry.verticesNeedUpdate = true;
-        }`
+lineMaterial = new THREE.MeshBasicMaterial({
+	color: window.myoManager.hands[myoId].myoId.colour
+});
+
+geometry = new THREE.Geometry();
+for (i=0; i < MAX_LINE_POINTS; i++){
+	geometry.vertices.push(new THREE.Vector3(0, 0, 0));
+}
+
+line = new THREE.Line(geometry, lineMaterial);
+line.geometry.dynamic = true;
+
+scene.add(line);'
+
+
+Now, when you want to add more vertices to the line, it's as simple as three steps:
+
+'line.geometry.vertices.push(myo_manager.myoId.currentLine.geometry.vertices.shift()); // shift the array
+line.geometry.vertices[100000-1] = new THREE.Vector3(myo_manager.cube.position.x, myo_manager.cube.position.y, 0); //add the point to the end of the array
+line.geometry.verticesNeedUpdate = true;'

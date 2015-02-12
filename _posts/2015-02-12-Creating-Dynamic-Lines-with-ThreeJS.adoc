@@ -17,10 +17,11 @@ line = new THREE.Line(geometry, lineMaterial);
 line.geometry.dynamic = true;
 
 scene.add(line);'
-
+```
 
 Now, when you want to add more vertices to the line, it's as simple as three steps:
 
+```
 // shift the array
 line.geometry.vertices.push(line.geometry.vertices.shift()); 
 //add the point to the end of the array

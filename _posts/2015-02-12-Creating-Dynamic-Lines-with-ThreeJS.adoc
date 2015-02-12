@@ -1,11 +1,13 @@
 = Creating Dynamic Lines with ThreeJS
 
+I came across a needed the ability to draw in Three.js. A small hack is to create a line and fill the vertices with the starting point. Note the `line.geometry.dynamic` flag which is set to true.
+
 ```
 var geometry, line, lineMaterial,
      MAX_LINE_POINTS = 100000;
 
 lineMaterial = new THREE.MeshBasicMaterial({
-	color: window.myoManager.hands[myoId].myoId.colour
+	color: 0x000
 });
 
 geometry = new THREE.Geometry();
@@ -24,7 +26,7 @@ Now, when you want to add more vertices to the line, it's as simple as three ste
 ```
 // shift the array
 line.geometry.vertices.push(line.geometry.vertices.shift()); 
-//add the point to the end of the array
+// add the point to the end of the array
 line.geometry.vertices[100000-1] = new THREE.Vector3(newPoint); 
 line.geometry.verticesNeedUpdate = true;
 ```

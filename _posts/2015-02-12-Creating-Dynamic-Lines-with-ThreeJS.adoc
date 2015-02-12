@@ -21,7 +21,9 @@ scene.add(line);'
 
 Now, when you want to add more vertices to the line, it's as simple as three steps:
 
-'line.geometry.vertices.push(myo_manager.myoId.currentLine.geometry.vertices.shift()); // shift the array
-line.geometry.vertices[100000-1] = new THREE.Vector3(myo_manager.cube.position.x, myo_manager.cube.position.y, 0); //add the point to the end of the array
+// shift the array
+line.geometry.vertices.push(line.geometry.vertices.shift()); 
+//add the point to the end of the array
+line.geometry.vertices[100000-1] = new THREE.Vector3(newPoint); 
 line.geometry.verticesNeedUpdate = true;
 ```

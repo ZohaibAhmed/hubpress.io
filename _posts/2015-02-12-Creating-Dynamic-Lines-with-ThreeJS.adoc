@@ -1,6 +1,6 @@
 = Creating Dynamic Lines with ThreeJS
 
-I came across a needed the ability to draw in Three.js. A small hack is to create a line and fill the vertices with the starting point. Note the `line.geometry.dynamic` flag which is set to true.
+I came across a need for the ability to draw dynamically in Three.js. A small hack is to create a line and fill the vertices with the starting point. Note the `line.geometry.dynamic` flag which is set to true.
 
 ```
 var geometry, line, lineMaterial,
